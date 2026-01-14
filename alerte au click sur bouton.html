@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert au click sur bouton</title>
+    <style>.bouton {
+        display: flex; 
+        justify-content: center;
+        margin-top: 300px;
+        gap: 100px;
+    }</style>
+</head>
+<body>
+    <div class="bouton">
+    <button id="bouton1">bouton ID</button>
+    <button class="bouton2">bouton Classe</button>
+    </div>
+    <script>
+        document.getElementById("bouton1").addEventListener("click", function() {
+            alert("bouton cliqué avec l'ID");});
+        document.getElementsByClassName("bouton2")[0].addEventListener("click", function() {alert("bouton cliqué avec la classe")});
+    </script>
+    
+</body>
+</html>
