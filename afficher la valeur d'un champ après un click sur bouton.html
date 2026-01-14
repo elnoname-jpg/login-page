@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>afficher la valeur d'un champ après un click sur bouton</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 300px;
+            font-size: 20px;
+            gap: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="text" id="champinput" placeholder="entrez une valeur">
+        <button>afficher la valeur</button>
+
+
+    <script>
+      document.querySelector("button").addEventListener("click", function() {  
+        let valeurduChamp = document.getElementById("champinput").value;
+        document.querySelector("p").innerText ="la valeur du champ est:" + valeurduChamp;
+
+      })
+
+    </script>
+<p></p>
+
+</body>
+</html>
