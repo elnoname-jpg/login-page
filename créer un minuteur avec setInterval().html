@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minuteur</title>
+</head>
+<body>
+    <a href="exercices.html">retour</a>
+    bouton start <button id="bouton start">Start</button>
+    <div id="minuteur">0</div>
+   <script> 
+        let seconde = 0;
+        let interval = null;
+
+        document.getElementById("bouton start").addEventListener("click", function() {
+            if (interval === null) {
+                interval = setInterval(function() {
+                    seconde++;
+                    document.getElementById("minuteur").textContent = seconde;
+                }, 1000);
+            }
+        });
+   </script> 
+</body>
+</html>

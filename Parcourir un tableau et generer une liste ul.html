@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcourir un tableau et generer une liste ul</title>
+</head>
+<style>
+    #liste {display: flex;
+        font-size: 20px;
+        flex-direction: column;
+        gap: 10px;
+        
+    }
+    a {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: block;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 250px;
+        
+    }
+
+</style>
+<body>
+    <div>
+        <a href="exercices.html">retour</a>
+        <ul id="liste"></ul>
+        <script>
+            const fruits = ["pomme", "banane", "orange", "kiwi", "mangue"];
+            const listedefruit = document.getElementById("liste");
+            for (let i = 0; i < fruits.length; i++) {
+                let element = document.createElement("li");
+                element.textContent = fruits[i];
+                listedefruit.appendChild(element);
+            }
+        </script>
+    </div>
+</body>
+</html>
