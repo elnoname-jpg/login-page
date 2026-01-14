@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modifier text paragraphe</title>
+    <style>
+        div {
+            display: flex;
+            font-size: 20px;
+            margin: 300px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <p>text pas modifier</p>
+    <button class="bouton changeur de text"> bouton changeur de text</button>
+    <script>
+document.getElementsByClassName("bouton changeur de text")[0].addEventListener("click", function() {
+    document.querySelector("p").innerText = "text modifié";
+});
+
+    </script></div>
+</body>
+</html>
