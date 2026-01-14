@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changer la couleur d'une div selon un nombre saisi</title>
+    <style>
+        body {
+           display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 20px;
+            gap:20px;
+            
+        }
+
+    div{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: solid 2px black;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+        .nombre_couleur {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-right: 50px;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black ;
+            border-radius: 8px;
+           
+
+        }
+        a{
+            display: flex;
+           margin-bottom: 100px;
+           justify-content: center;
+        }
+        h3{
+        display: flex;
+        border-bottom: 2px solid black;
+        border-top: 2px solid black;
+        border-radius: 8px;
+
+        
+        }
+    </style>
+</head> 
+<body>
+    <strong><a href="exercices.html">retour</a></strong>
+    <h3>Entrez un nombre entre 0 et 7 pour changer la couleur de la div</h3>
+    <main class="nombre_couleur">
+    <p>0 = noir</p>
+    <p>1 = rouge</p>
+    <p>2 = vert</p>
+    <p>3 = bleu</p>
+    <p>4 = jaune</p>
+    <p>5 = violet</p>
+    <p>6 = orange</p>
+    <p>7 = rose</p></main>
+    <input type="text" id="nombreinput" placeholder="entrez un nombre">
+    <button id="bouton">entrez</button>
+    <script>
+        document.getElementById("bouton").addEventListener("click", function() {
+            let nombreSaisi = parseInt(document.getElementById("nombreinput").value);
+            let div = document.querySelector("div");
+            switch (nombreSaisi) {
+                case 0:
+                    div.style.backgroundColor = "black";
+                    break;
+                case 1:
+                    div.style.backgroundColor = "red";
+                    break;
+                case 2:
+                    div.style.backgroundColor = "green";
+                    break;
+                case 3:
+                    div.style.backgroundColor = "blue";
+                    break;
+                case 4:
+                    div.style.backgroundColor = "yellow";
+                    break;
+                case 5:
+                    div.style.backgroundColor = "purple";
+                    break;
+                case 6:
+                    div.style.backgroundColor = "orange";
+                    break;
+                case 7:
+                    div.style.backgroundColor = "pink";
+                    break;
+            }
+        });
+    </script>
+
+    <div>div qui change de couleur</div>
+</body>
+</html>

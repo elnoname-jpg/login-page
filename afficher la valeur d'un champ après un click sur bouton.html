@@ -6,17 +6,30 @@
     <title>afficher la valeur d'un champ après un click sur bouton</title>
     <style>
         body {
-            display: flex;
+           display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 300px;
             font-size: 20px;
+            gap: 20px; 
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            
+           
+            
             gap: 20px;
+            border: solid 2px black;
+            border-radius: 8px;
+            padding: 20px;
         }
 
     </style>
 </head>
 <body>
+    <strong><a href="exercices.html">retour</a></strong>
+    <div> 
     <input type="text" id="champinput" placeholder="entrez une valeur">
         <button>afficher la valeur</button>
 
@@ -26,10 +39,9 @@
         let valeurduChamp = document.getElementById("champinput").value;
         document.querySelector("p").innerText ="la valeur du champ est:" + valeurduChamp;
 
-      })
-
+      }) 
     </script>
 <p></p>
-
+</div> 
 </body>
 </html>
