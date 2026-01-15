@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérificateur de mot de passe fort</title>
+    <style>
+     
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            color: #fff;
+        }
+
+      
+        .sysmotdepasse {
+            background: #2c2c54;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 320px;
+            align-items: center;
+        }
+
+        input[type="password"] {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+        }
+
+  
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f7df1e, #ffc107);
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+  
+        p.message {
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            animation: fade 1s forwards;
+        }
+
+        p.message.fort {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        p.message.faible {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sysmotdepasse">
+        <input type="password" name="MotDePasseFort" id="ChampMotDePasse" placeholder="Entrez mot de passe">
+        <button id="Verifier">Vérifier</button>
+    </div>
+
+    <script>
+        const boutonVerifier = document.getElementById("Verifier");
+        const champMotDePasse = document.getElementById("ChampMotDePasse");
+
+        boutonVerifier.addEventListener("click", async function() {
+            const motDePasse = champMotDePasse.value;
+            const Fort = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            const p = document.createElement("p");
+            p.classList.add("message");
+
+            if (Fort.test(motDePasse)) {
+                p.textContent = "Mot de passe fort ";
+                p.classList.add("fort");
+                
+            } else {
+                p.textContent = "Mot de passe faible (min 8 caractères + chiffres)";
+                p.classList.add("faible");
+                
+            }
+
+            document.querySelector(".sysmotdepasse").appendChild(p);
+        });
+    </script>
+    
+</body>
+</html>

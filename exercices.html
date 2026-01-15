@@ -1,55 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercices java script</title>
+    <title>Exercices JavaScript</title>
+
     <style>
         body {
+            min-height: 100vh;
+            margin: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            font-size: 20px;
-            gap: 20px;
-            
-        }
-
-        strong {
-            font-size: 30px;
-            margin-bottom: 20px;
-          
+            background: #f0f2f5;
+            font-family: Arial, sans-serif;
         }
 
         .lien_exercices {
             display: flex;
             flex-direction: column;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            gap: 10px;    
-            box-shadow: 0px 0px 25px 15px rgba(0,0,0,0.1);
+            gap: 15px;
+            padding: 25px;
+            width: 420px;
+
+            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+
+            color: #ffffff;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .header strong {
+            font-size: 32px;
+            color: #f7df1e;
+            text-transform: capitalize;
+            filter: drop-shadow(0 0 20px rgba(255, 225, 0, 0.836));
+        }
+
+        .header img {
+            width: 90px;
+            filter: drop-shadow(0 0 20px rgba(255, 225, 0, 0.836));
+        }
+
+        .lien_exercices a {
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 14px;
+            border-radius: 8px;
             
-            border-color: #646464;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-         
+            transition: all 0.25s ease;
+            
+        }
+
+        .lien_exercices a:hover {
+            background: #f7df1e;
+            color: #000;
+            transform:rotate(1deg) scale(1.10);
         }
     </style>
 </head>
+
 <body>
+
     <div class="lien_exercices">
-            <strong>exercices java script</strong>
-     <a href="alerte au click sur bouton.html">alert au clic sur bouton</a>
-     <a href="modifier text paragraphe.html">modifier text paragraphe</a>
-     <a href="afficher la valeur d'un champ après un click sur bouton.html">valeur de champs affichée après un click sur bouton</a>
-     <a href="changer la couleur d'une div selon un nombre saisi.html">changer la couleur d'une div selon un nombre saisi</a>
-     <a href="Parcourir un tableau et generer une liste ul.html">Parcourir un tableau et generer une liste ul </a>
-     <a href="créer un minuteur avec setInterval().html">créer un minuteur avec setInterval()</a>
-     <a href="darkmodecheckbox.html">darkmodecheckbox</a>
-     <a href="creer un graphique avec canvas.html">creer un graphique avec canvas</a>
-     <a href="gerer un click sur un element generer dynamiquement (event delegation).html">gerer un click sur un element generer dynamiquement (event delegation)</a>
-     <a href="creer dynamiquement 5 cartes utilisateurs à partir d'un tableau.html">creer dynamiquement 5 cartes utilisateurs à partir d'un tableau</a>
-</div>
+
+        <div class="header">
+            <strong>exercices</strong>
+            <img src="https://brandslogos.com/wp-content/uploads/images/javascript-logo.png"
+                 alt="logo javascript">
+        </div>
+
+        <a href="alerte au click sur bouton.html">Alert au clic sur bouton</a>
+        <a href="modifier text paragraphe.html">Modifier le texte d’un paragraphe</a>
+        <a href="afficher la valeur d'un champ après un click sur bouton.html">Afficher la valeur d’un champ</a>
+        <a href="changer la couleur d'une div selon un nombre saisi.html">Changer la couleur d’une div</a>
+        <a href="Parcourir un tableau et generer une liste ul.html">Parcourir un tableau</a>
+        <a href="créer un minuteur avec setInterval().html">Créer un minuteur</a>
+        <a href="darkmodecheckbox.html">Dark mode (checkbox)</a>
+        <a href="creer un graphique avec canvas.html">Graphique avec canvas</a>
+        <a href="gerer un click sur un element generer dynamiquement (event delegation).html">
+            Event delegation
+        </a>
+        <a href="creer dynamiquement 5 cartes utilisateurs à partir d'un tableau.html">
+            Cartes utilisateurs dynamiques
+        </a>
+        <a href="verifie si un mot de passe fort avec plus de 8 characteres et des chiffres.html">mot de passe fort</a>
+
+    </div>
 
 </body>
 </html>

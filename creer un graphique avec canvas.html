@@ -14,23 +14,29 @@
             font-size: 18px;
             font-family: arial, sans-serif;
         }
+        canvas {
+            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            border-radius: 8px;
+            border: none;
+            
+        }
         </style>
 </head>
 <body>
-    <canvas width="500" height="350" style="  box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.2);"></canvas>
+    <canvas width="500" height="350" style=" box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.2);" ></canvas>
      <a href="exercices.html">retour</a>
    
 
     <script>
        const canvas = document.querySelector("canvas");
        const ctx = canvas.getContext("2d");
-         ctx.fillStyle = "lightblue";
+         ctx.fillStyle = "#f7df1e";
             ctx.fillRect(50, 150, 50, 200);
-            ctx.fillStyle = "lightblue";
+            ctx.fillStyle = "#f7df1e";
             ctx.fillRect(150, 100, 50, 250);
-            ctx.fillStyle = "lightblue";
+            ctx.fillStyle = "#f7df1e";
             ctx.fillRect(250, 50, 50, 300);
-            ctx.fillStyle = "lightblue";
+            ctx.fillStyle = "#f7df1e";
             ctx.fillRect(350, 200, 50, 150);
 
 
