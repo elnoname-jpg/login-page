@@ -6,15 +6,17 @@
     <title>modifier text paragraphe</title>
     <style>
         div {
-            display: flex;
-            font-size: 20px;
+            display: flex; 
+        justify-content: center;
+        border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            gap: 10px;    
+            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
             
-            gap: 20px;
-            justify-content: center;
-            border: solid 2px black;
-            border-radius: 8px;
-            padding: 20px ;
-            flex-direction: column;
+            border-color: #646464;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
         }
         body {
             display: flex;
@@ -34,7 +36,7 @@
     <button class="bouton changeur de text"> bouton changeur de text</button>
     <script>
 document.getElementsByClassName("bouton changeur de text")[0].addEventListener("click", function() {
-    document.querySelector("p").innerText = "text modifié";
+    document.querySelector("p").innerHTML = "text modifié";
 });
 
     </script></div>

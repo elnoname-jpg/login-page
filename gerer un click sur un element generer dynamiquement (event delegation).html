@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gerer un click sur un element generer dynamiquement (event delegation)</title>
+    <style>
+        #container {
+            margin: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        #addbouton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .boutondynamique {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-family: arial, sans-serif;
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="exercices.html">retour</a>
+    <div id="container">
+        <button id="addbouton">Ajouter un bouton</button>
+    </div>
+
+    <script>
+        const container = document.getElementById("container");
+        const addbutton = document.getElementById("addbouton");
+
+        addbutton.addEventListener("click", function() {
+            const newButton = document.createElement("button");
+            newButton.textContent = "Bouton Dynamique";
+            newButton.className = "boutondynamique";
+            container.appendChild(newButton);
+        });
+
+        container.addEventListener("click", function(event) {
+            if (event.target && event.target.classList.contains("boutondynamique")) {
+                alert("vous avez cliquer sur un bouton dynamique");
+            }
+        });
+    </script>     
+</body>
+</html>

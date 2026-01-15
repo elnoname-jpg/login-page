@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creer dynamiquement 5 cartes utilisateurs à partir d'un tableau</title>
+    <style>
+        div.carte_utilisateur {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            border-style: dashed;
+            border-color: #888;
+            background-color: #f9f9f9;
+
+        }
+        #carte_utilisateur {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        a {
+            font-size: 20px;
+            font-family: arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <a href="exercices.html">retour</a>
+    <div id="carte_utilisateur"></div>
+
+    <script>
+        const utilisateur = [
+            { nom: "Alice", age: 28, email: "alice@example.com" },
+            { nom: "Bob", age: 34, email: "bob@example.com" },
+            { nom: "Charlie", age: 22, email: "charlie@example.com" },
+            { nom: "Diana", age: 30, email: "diana@example.com" },
+            { nom: "Ethan", age: 25, email: "ethan@example.com" }
+        ];
+
+        const donné_utilisateur = document.getElementById("carte_utilisateur");
+
+        utilisateur.forEach(utilisateur => {
+            const carte = document.createElement("div");
+            carte.className = "carte_utilisateur";
+            carte.innerHTML = `
+                <strong><h3>${utilisateur.nom}</h3></strong>
+                <p>Âge: ${utilisateur.age}</p>
+                <p>Email: ${utilisateur.email}</p>
+            `;
+            donné_utilisateur.appendChild(carte);
+        });
+    </script>   
+</body>
+</html>
