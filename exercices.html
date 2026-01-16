@@ -14,7 +14,6 @@
             align-items: center;
             background: #f0f2f5;
             font-family: Arial, sans-serif;
-            
         }
 
         .lien_exercices {
@@ -28,7 +27,20 @@
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 
+            /* ✅ hauteur limitée pour activer le scroll */
+            max-height: 600px;
+            overflow-y: auto;
+
             color: #ffffff;
+        }
+
+        /* Optionnel : cacher la scrollbar si tu veux */
+        .lien_exercices::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        .lien_exercices {
+            -ms-overflow-style: none;  /* IE 10+ */
+            scrollbar-width: none;     /* Firefox */
         }
 
         .header {
@@ -43,12 +55,12 @@
             color: #f7df1e;
             text-transform: capitalize;
             filter: drop-shadow(0 0 20px rgba(255, 225, 0, 0.836));
-            
         }
-        strong{
-            transition: all 0.25s ease;
 
+        strong {
+            transition: all 0.25s ease;
         }
+
         strong:hover {
             transform: scale(1.1);
         }
@@ -56,6 +68,11 @@
         .header img {
             width: 90px;
             filter: drop-shadow(0 0 20px rgba(255, 225, 0, 0.836));
+            transition: all 0.25s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
         }
 
         .lien_exercices a {
@@ -64,22 +81,13 @@
             background: rgba(255, 255, 255, 0.08);
             padding: 10px 14px;
             border-radius: 8px;
-            
             transition: all 0.25s ease;
-            
         }
 
         .lien_exercices a:hover {
             background: #f7df1e;
             color: #000;
-            transform:rotate(1deg) scale(1.10);
-        }
-        img{
-            transition: all 0.25s ease;
-
-        }
-        img:hover {
-            transform: scale(1.1);
+            transform: rotate(0deg) scale(1.10);
         }
     </style>
 </head>
@@ -90,8 +98,7 @@
 
         <div class="header">
             <strong>exercices</strong>
-            <img src="https://brandslogos.com/wp-content/uploads/images/javascript-logo.png"
-                 alt="logo javascript">
+            <img src="https://brandslogos.com/wp-content/uploads/images/javascript-logo.png" alt="logo javascript">
         </div>
 
         <a href="alerte au click sur bouton.html">Alert au clic sur bouton</a>
@@ -113,6 +120,7 @@
         <a href="Envoi d'un formulaire via fetch() (méthode POST).html">Formulaire</a>
         <a href="couleur random avec GetRandomColor.html">Couleur aléatoire</a>
         <a href="recherche filtrante dans une liste.html">filtre recherche</a>
+        
 
     </div>
 
