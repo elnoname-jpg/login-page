@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche filtrante</title>
+
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 480px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .header strong {
+            font-size: 28px;
+            color: #f7df1e;
+            text-transform: capitalize;
+            filter: drop-shadow(0 0 20px rgba(255, 225, 0, 0.8));
+            transition: transform 0.25s ease;
+        }
+
+        .header strong:hover {
+            transform: scale(1.1);
+        }
+
+        .header img {
+            width: 80px;
+            filter: drop-shadow(0 0 20px rgba(255, 225, 0, 0.8));
+            transition: transform 0.25s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
+        }
+
+        .recherche {
+            margin-bottom: 15px;
+        }
+
+        .recherche input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        ul {
+            max-height: 400px;
+            overflow-y: auto;
+
+            scrollbar-width: none;      
+            -ms-overflow-style: none;   
+            }
+
+        ul::-webkit-scrollbar {
+            display: none;               
+            }
+
+        li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        li:hover {
+            background: #f7df1e;
+            color: #000;
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        #emptyMessage {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            color: #f7df1e;
+            font-size: 18px;
+            font-family: arial, sans-serif;
+
+        }
+        a{
+            font-family: arial, sans-serif;
+            text-decoration: none;
+            font-size: 24px;
+            color:yellow;
+            filter: drop-shadow(0 0 15px yellow);
+            transition: all 0.25s ease;
+            
+        }
+        a:hover{
+            font-size: 26px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <a href="exercices.html">Retour</a>
+    <div class="header">
+        <strong>recherche</strong>
+        <img src="https://brandslogos.com/wp-content/uploads/images/javascript-logo.png" alt="JS">
+    </div>
+
+    <div class="recherche">
+        <input type="text" id="recherche" placeholder="Rechercher un mot...">
+    </div>
+
+    <ul id="list">
+        <!-- Liste des éléments -->
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Date</li>
+        <li>Elderberry</li>
+        <li>Fig</li>
+        <li>Grape</li>
+        <li>Honeydew</li>
+        <li>Kiwi</li>
+        <li>Lemon</li>
+        <li>Mango</li>
+        <li>Nectarine</li>
+        <li>Orange</li>
+        <li>Pear</li>
+        <li>Quince</li>
+        <li>Raspberry</li>
+        <li>Strawberry</li>
+        <li>Tangerine</li>
+        <li>Watermelon</li>
+
+        <!-- Légumes -->
+        <li>Carrot</li>
+        <li>Broccoli</li>
+        <li>Spinach</li>
+        <li>Potato</li>
+        <li>Tomato</li>
+        <li>Onion</li>
+        <li>Garlic</li>
+        <li>Radish</li>
+        <li>Turnip</li>
+        <li>Eggplant</li>
+
+        <!-- Herbes / épices -->
+        <li>Basil</li>
+        <li>Cilantro</li>
+        <li>Parsley</li>
+        <li>Mint</li>
+        <li>Rosemary</li>
+        <li>Thyme</li>
+        <li>Sage</li>
+        <li>Oregano</li>
+        <li>Nutmeg</li>
+        <li>Pepper</li>
+
+        <!-- Divers -->
+        <li>Almond</li>
+        <li>Cashew</li>
+        <li>Walnut</li>
+        <li>Hazelnut</li>
+        <li>Peanut</li>
+        <li>Quinoa</li>
+        <li>Rice</li>
+        <li>Wheat</li>
+        <li>Barley</li>
+        <li>Oats</li>
+
+        <!-- Supplément (~100 mots au total) -->
+        <li>Vanilla</li>
+        <li>Cinnamon</li>
+        <li>Chocolate</li>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Sugar</li>
+        <li>Honey</li>
+        <li>Butter</li>
+        <li>Cheese</li>
+        <li>Milk</li>
+        <li>Yogurt</li>
+        <li>Bread</li>
+        <li>Pasta</li>
+        <li>Pizza</li>
+        <li>Sandwich</li>
+        <li>Soup</li>
+        <li>Salad</li>
+        <li>Steak</li>
+        <li>Chicken</li>
+        <li>Fish</li>
+    </ul>
+
+    <p id="emptyMessage">empty</p>
+
+</div>
+
+<script>
+    const recherche = document.getElementById("recherche");
+    const listItems = document.querySelectorAll("#list li");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    recherche.addEventListener("input", filterList);
+
+    function filterList() {
+        const filter = recherche.value.toLowerCase();
+        let visibleCount = 0;
+
+        listItems.forEach(item => {
+            const text = item.textContent.toLowerCase();
+
+            if (text.includes(filter)) {
+                item.style.display = "";
+                visibleCount++;
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
+    }
+</script>
+
+</body>
+</html>
