@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envoi d'un formulaire via fetch() (méthode POST)</title>
+    <style>
+        body {
+           display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 300px;
+            font-size: 20px;
+            gap: 20px; 
+        }
+        div.contenaire {
+            
+            text-align: center;
+        justify-content: center;
+        border: none;
+            border-radius: 8px;
+            padding: 15px 20px;
+            gap: 15px;    
+            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
+            background:linear-gradient(-135deg, #1e1e2f, #34346c);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        div.contenaire2 {
+           
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+            
+        }
+        a {
+            text-decoration: none;
+            color: #f7df1e;
+            font-size: 24px;
+            filter: drop-shadow(0 0 10px #f7df1e);
+            transition: all 0.25s ease;
+            font-family: arial, sans-serif;
+        }
+        a:hover {
+            color: #ccb718; 
+            filter: drop-shadow(0 0 10px #ccb718);
+            font-size: 26px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input {
+            font-size: 18px;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+
+        }
+        input:focus {
+            outline: none;
+        }
+        button {
+            border: none;
+            font-size: 24px;
+            border-radius: 8px;
+            color: black;
+            padding: 10px 20px;
+            background:linear-gradient(#f7df1e, #eece00);
+            filter: drop-shadow(0 0 10px #f7df1e);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        button:hover {
+           background:linear-gradient(#edcd00, #f7df1e);
+              transform: scale(1.02);
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenaire">
+        <div class="contenaire2">
+        <a href="exercices.html">retour</a>
+        </div>
+        <form id="monFormulaire">
+            <input type="text" name="nom" placeholder="Entrez votre nom" required>
+            <input type="email" name="email" placeholder="Entrez votre email" required>
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <script>
+            document.getElementById('monFormulaire').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+
+                fetch('https://example.com/api/formulaire', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Succès:', data);
+                })
+                .catch((error) => {
+                    console.error('Erreur:', error);
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

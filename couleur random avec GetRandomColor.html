@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alert au click sur bouton</title>
+    <title>couleur aleatoire</title>
     <style>
-  
         body {
             display: flex;
             flex-direction: column;
@@ -19,8 +18,7 @@
             background: #f0f2f5;
         }
 
-       
-        strong a {
+        a {
             text-decoration: none;
             color: #f7df1e;
             font-size: 24px;
@@ -29,20 +27,12 @@
             transition: all 0.25s ease;
         }
 
-        strong a:hover {
+        a:hover {
             color: #d4be13; 
             filter: drop-shadow(0 0 10px #d4be13);
             font-size:26px ;
         }
 
-        
-        .bouton {
-            display: flex; 
-            justify-content: center;
-            gap: 20px;
-        }
-
-    
         button {
             padding: 12px 24px;
             border: none;
@@ -58,52 +48,50 @@
         
         button:hover {
             transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+            color: #f7df1e;
             background: linear-gradient(135deg, #2c2c54, #1e1e2f);
         }
-
-        
-        .bouton2 {
-            background: linear-gradient(135deg, #f7df1e, #ffc107);
-            color: #000;
-        }
-
-        .bouton2:hover {
-            background: linear-gradient(135deg, #ffc107, #f7df1e);
-            color: #000;
-        }
         div.contenaire {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-            font-size: 20px;
-            gap: 20px;
-            border:none;
-            background:linear-gradient(-135deg, #1e1e2f, #34346c);
+            border: none;
             border-radius: 8px;
             padding: 15px 20px;
+            gap: 10px;
+            background:linear-gradient(-135deg, #1e1e2f, #34346c);
+
         }
+        div.contenaire2 {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            border: none;   
+            border-radius: 8px;
+            padding: 15px 20px;
+            gap: 10px;
+
+        }
+
     </style>
 </head>
 <body>
     <div class="contenaire">
-    <strong><a href="exercices.html">Retour</a></strong>
-
-    <div class="bouton">
-        <button id="bouton1">Bouton ID</button>
-        <button class="bouton2">Bouton Classe</button>
+        <div class="contenaire2">
+    <a href="exercices.html">Retour</a>
     </div>
-
+    <button>bouton changeur de couleur</button>
     <script>
-        document.getElementById("bouton1").addEventListener("click", function() {
-            alert("Bouton cliqué avec l'ID");
-        });
+        button = document.querySelector("button");
+    function getRandomColor() {
+    
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    
+    
+    return "#" + randomColor.padStart(6, "0");
+}
 
-        document.getElementsByClassName("bouton2")[0].addEventListener("click", function() {
-            alert("Bouton cliqué avec la classe");
-        });
-    </script>
-    </div>
+    button.addEventListener("click", function(click){
+        document.body.style.backgroundColor = getRandomColor();
+    });
+
+</script></div>
 </body>
 </html>

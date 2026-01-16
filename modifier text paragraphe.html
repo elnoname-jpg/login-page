@@ -3,42 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>modifier text paragraphe</title>
+    <title>Modifier texte paragraphe</title>
+
     <style>
-        div {
-            display: flex; 
-        justify-content: center;
-        border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            gap: 10px;    
-            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
-            
-            border-color: #646464;
-            background-color: #f9f9f9;
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 200px;
+            font-size: 20px;
             font-family: Arial, sans-serif;
         }
-        body {
+
+        .box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 300px;
-            font-size: 20px;
-            gap: 20px; 
+            gap: 20px;
+
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(-135deg, #1e1e2f, #34346c);
+            color: white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.2);
         }
 
+        .box a {
+            text-decoration: none;
+            color: #f7df1e;
+            font-size: 24px;
+            filter: drop-shadow(0 0 10px black);
+            transition: all 0.25s ease;
+        }
+
+        .box a:hover {
+            color: #cab518;
+            filter: drop-shadow(0 0 10px #cab518);
+            font-size: 26px;
+        }
+
+        .bouton {
+            border: none;
+            font-size: 24px;
+            border-radius: 8px;
+            color: black;
+            padding: 10px 20px;
+            background: linear-gradient(#f7df1e, #eece00);
+            filter: drop-shadow(0 0 10px #f7df1e);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body>
-    <strong><a href="exercices.html">retour</a></strong>
-    <div>
-    <p>text pas modifier</p>
-    <button class="bouton changeur de text"> bouton changeur de text</button>
-    <script>
-document.getElementsByClassName("bouton changeur de text")[0].addEventListener("click", function() {
-    document.querySelector("p").innerHTML = "text modifié";
-});
 
-    </script></div>
+<body>
+
+    <div class="box">
+        <strong><a href="exercices.html">Retour</a></strong>
+
+        <p id="texte">texte pas modifié</p>
+
+        <button class="bouton">Bouton changeur de texte</button>
+    </div>
+
+    <script>
+        document.querySelector(".bouton").addEventListener("click", function () {
+            document.getElementById("texte").textContent = "texte modifié";
+        });
+    </script>
+
 </body>
 </html>

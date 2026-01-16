@@ -1,130 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>changer la couleur d'une div selon un nombre saisi</title>
+    <title>Changer la couleur d'une div</title>
+
     <style>
         body {
-           display: flex;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 20px;
-            gap:20px;
-            
+            gap: 20px;
+
+            padding: 40px;
+            border-radius: 20px;
+
+            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
 
-    div{
-            display: flex; 
-        justify-content: center;
-        border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            gap: 10px;    
-            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
-            
-            border-color: #646464;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
+        a {
+            color: #f7df1e;
+            font-size: 24px;
+            text-decoration: none;
+            filter: drop-shadow(0 0 10px #f7df1e);
+            font-family: arial, sans-serif;
         }
+        a:hover {
+            color: #c9b416;
+            filter: drop-shadow(0 0 10px #c9b416);
+        }
+
+        h3 {
+            padding: 15px 20px;
+            border-radius: 8px;
+            color:yellow;
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
         .nombre_couleur {
-            display: flex; 
-        justify-content: center;
-        border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            gap: 10px;    
-            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
-            
-            border-color: #646464;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-           
-
-        }
-        a{
             display: flex;
-           margin-bottom: 100px;
-           justify-content: center;
-           font-family: arial, sans-serif;
+            gap: 10px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color:white;
+            filter: drop-shadow(0 0 8px black);
+            background: linear-gradient(
+                135deg,
+                #000000 0%,
+                #c0392b 14%,
+                #27ae60 28%,
+                #2980b9 42%,
+                #f1c40f 56%,
+                #8e44ad 70%,
+                #e67e22 84%,
+                #fd79a8 100%
+            );
         }
-        h3{
-        display: flex; 
-        justify-content: center;
-        border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            gap: 10px;    
-            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
-            
-            border-color: #646464;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
 
-        
+        input {
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: none;
+            width: 200px;
+            text-align: center;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: white;
+            box-shadow: 0 0 10px black;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
         }
-        input{
-            display: flex; 
-        justify-content: center;
-        border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            gap: 10px;    
-            box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.1);
-            
-            border-color: #646464;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;;
+
+        button {
+            border: none;
+            font-size: 24px;
+            border-radius: 8px;
+            color: black;
+            padding: 10px 20px;
+            background: linear-gradient(#f7df1e, #eece00);
+            filter: drop-shadow(0 0 10px #f7df1e);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .couleur_de_la_div {
+            margin-top: 10px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            background-color: rgb(202, 202, 202);
+            color: black;
+            transition: background-color 0.5s ease;
         }
     </style>
-</head> 
+</head>
+
 <body>
-    <strong><a href="exercices.html">retour</a></strong>
-    <h3>Entrez un nombre entre 0 et 7 pour changer la couleur de la div</h3>
-    <main class="nombre_couleur">
-    <p>0 = noir</p>
-    <p>1 = rouge</p>
-    <p>2 = vert</p>
-    <p>3 = bleu</p>
-    <p>4 = jaune</p>
-    <p>5 = violet</p>
-    <p>6 = orange</p>
-    <p>7 = rose</p></main>
-    <input type="text" id="nombreinput" placeholder="entrez un nombre">
-    <button id="bouton">entrez</button>
+
+    <div class="container">
+
+        <strong><a href="exercices.html">retour</a></strong>
+
+        <h3>Entrez un nombre entre 0 et 7 pour changer la couleur de la div</h3>
+
+        <main class="nombre_couleur">
+            <p>0 = noir</p>
+            <p>1 = rouge</p>
+            <p>2 = vert</p>
+            <p>3 = bleu</p>
+            <p>4 = jaune</p>
+            <p>5 = violet</p>
+            <p>6 = orange</p>
+            <p>7 = rose</p>
+        </main>
+
+        <input type="text" id="nombreinput" placeholder="Entrez un nombre">
+        <button id="bouton">Entrer</button>
+
+        <div class="couleur_de_la_div" id="divCouleur">
+            div qui change de couleur
+        </div>
+
+    </div>
+
     <script>
-        document.getElementById("bouton").addEventListener("click", function() {
-            let nombreSaisi = parseInt(document.getElementById("nombreinput").value);
-            let div = document.querySelector("div");
+        document.getElementById("bouton").addEventListener("click", function () {
+            const nombreSaisi = parseInt(document.getElementById("nombreinput").value);
+            const div = document.getElementById("divCouleur");
+
             switch (nombreSaisi) {
-                case 0:
-                    div.style.backgroundColor = "black";
-                    break;
-                case 1:
-                    div.style.backgroundColor = "red";
-                    break;
-                case 2:
-                    div.style.backgroundColor = "green";
-                    break;
-                case 3:
-                    div.style.backgroundColor = "blue";
-                    break;
-                case 4:
-                    div.style.backgroundColor = "yellow";
-                    break;
-                case 5:
-                    div.style.backgroundColor = "purple";
-                    break;
-                case 6:
-                    div.style.backgroundColor = "orange";
-                    break;
-                case 7:
-                    div.style.backgroundColor = "pink";
-                    break;
+                case 0: div.style.backgroundColor = "rgb(45,45,45)"; break;
+                case 1: div.style.backgroundColor = "red"; break;
+                case 2: div.style.backgroundColor = "green"; break;
+                case 3: div.style.backgroundColor = "blue"; break;
+                case 4: div.style.backgroundColor = "yellow"; break;
+                case 5: div.style.backgroundColor = "purple"; break;
+                case 6: div.style.backgroundColor = "orange"; break;
+                case 7: div.style.backgroundColor = "pink"; break;
             }
         });
+        switch (nombreSaisi) {
+            case 0: div.style.boxShadow = "0 0 20px black"; break;
+            case 1: div.style.boxShadow = "0 0 20px red"; break;
+            case 2: div.style.boxShadow = "0 0 20px green"; break;
+            case 3: div.style.boxShadow = "0 0 20px blue"; break;
+            case 4: div.style.boxShadow = "0 0 20px yellow"; break;
+            case 5: div.style.boxShadow = "0 0 20px purple"; break;
+            case 6: div.style.boxShadow = "0 0 20px orange"; break;
+            case 7: div.style.boxShadow = "0 0 20px pink"; break;
+        }
     </script>
 
-    <div>div qui change de couleur</div>
 </body>
 </html>

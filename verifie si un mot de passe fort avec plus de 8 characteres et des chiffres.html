@@ -36,6 +36,15 @@
             border: none;
             width: 100%;
             font-size: 16px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+        }
+        input:focus{
+        outline: none;
+
+
         }
 
   
@@ -76,12 +85,26 @@
             background-color: #dc3545;
             color: #fff;
         }
+        a{
+            text-decoration: none;
+            font-size: 24px;
+            font-family: arial, sans-serif;
+            color: #f7df1e;
+            transition: all 0.25s ease;
+
+
+        }
+        a:hover{
+            color: #d6c018;
+            font-size: 26px;
+        }
 
     </style>
 </head>
 <body>
 
     <div class="sysmotdepasse">
+        <a href="exercices.html">Retour</a>
         <input type="password" name="MotDePasseFort" id="ChampMotDePasse" placeholder="Entrez mot de passe">
         <button id="Verifier">Vérifier</button>
     </div>

@@ -16,19 +16,43 @@
         input[type="checkbox"] {
             width: 20px;
             height: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
+            border-radius:8px ;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  
         }
         label {
             font-size: 20px;
             margin-left: 10px;
+            color:black;
+            transition: color 0.25s ease;
         }
         a {
             display: block;
             margin-bottom: 20px;
             font-size: 18px;
             font-family: arial, sans-serif;
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+            transition: color 0.25s ease;
+
         }
         input, label {
             font-family: arial, sans-serif;
+            cursor: pointer;
+            transition: color 0.25s ease;
+        }
+        a:hover {
+           color: #f7df1e;
+        }
+        label:hover {
+            color: #f7df1e;
+        }
+        input[type="checkbox"]:hover {
+            transition: scale(1.1);
         }
     </style>
 </head>

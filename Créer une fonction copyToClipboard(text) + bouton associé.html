@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer une fonction copyToClipboard(text) + bouton associé</title>
+    <style></style>
+</head>
+<body>
+    <div>
+        <a href="exercices.html">retour</a>
+        <input type="text" id="TextCopier" placeholder="entrez du text">
+        <button>copier</button>
+        <input type="text" id="Tester" placeholder="collez le text">
+        <script>
+           let boutonCopier = document.querySelector("button");
+
+           function copyToClipboard(text) {
+               navigator.clipboard.writeText(text);
+           }
+
+           boutonCopier.addEventListener("click", function () {
+            let TextCopier = document.getElementById("TextCopier").value;
+               copyToClipboard(TextCopier);
+           });
+
+        </script>
+        
+
+
+    </div> 
+</body>
+</html>
