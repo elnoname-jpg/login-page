@@ -70,14 +70,13 @@
         ul {
             max-height: 400px;
             overflow-y: auto;
-
             scrollbar-width: none;      
             -ms-overflow-style: none;   
-            }
+        }
 
         ul::-webkit-scrollbar {
             display: none;               
-            }
+        }
 
         li {
             padding: 8px 12px;
@@ -100,20 +99,19 @@
             color: #f7df1e;
             font-size: 18px;
             font-family: arial, sans-serif;
-
         }
+
         a{
             font-family: arial, sans-serif;
             text-decoration: none;
             font-size: 24px;
-            color:yellow;
+            color: yellow;
             filter: drop-shadow(0 0 15px yellow);
             transition: all 0.25s ease;
-            
         }
+
         a:hover{
             font-size: 26px;
-
         }
     </style>
 </head>
@@ -128,11 +126,14 @@
     </div>
 
     <div class="recherche">
-        <input type="text" id="recherche" placeholder="Rechercher un mot...">
+        <!-- on lie l'input à la datalist -->
+        <input type="text" id="recherche" placeholder="Rechercher un mot..." list="listeOptions">
+        <datalist id="listeOptions">
+            <!-- Options seront générées automatiquement -->
+        </datalist>
     </div>
 
     <ul id="list">
-        <!-- Liste des éléments -->
         <li>Apple</li>
         <li>Banana</li>
         <li>Cherry</li>
@@ -152,8 +153,6 @@
         <li>Strawberry</li>
         <li>Tangerine</li>
         <li>Watermelon</li>
-
-        <!-- Légumes -->
         <li>Carrot</li>
         <li>Broccoli</li>
         <li>Spinach</li>
@@ -164,8 +163,6 @@
         <li>Radish</li>
         <li>Turnip</li>
         <li>Eggplant</li>
-
-        <!-- Herbes / épices -->
         <li>Basil</li>
         <li>Cilantro</li>
         <li>Parsley</li>
@@ -176,8 +173,6 @@
         <li>Oregano</li>
         <li>Nutmeg</li>
         <li>Pepper</li>
-
-        <!-- Divers -->
         <li>Almond</li>
         <li>Cashew</li>
         <li>Walnut</li>
@@ -188,8 +183,6 @@
         <li>Wheat</li>
         <li>Barley</li>
         <li>Oats</li>
-
-        <!-- Supplément (~100 mots au total) -->
         <li>Vanilla</li>
         <li>Cinnamon</li>
         <li>Chocolate</li>
@@ -220,7 +213,11 @@
     const recherche = document.getElementById("recherche");
     const listItems = document.querySelectorAll("#list li");
     const emptyMessage = document.getElementById("emptyMessage");
+    const datalist = document.getElementById("listeOptions");
 
+    
+
+    
     recherche.addEventListener("input", filterList);
 
     function filterList() {
@@ -229,7 +226,6 @@
 
         listItems.forEach(item => {
             const text = item.textContent.toLowerCase();
-
             if (text.includes(filter)) {
                 item.style.display = "";
                 visibleCount++;
