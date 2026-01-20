@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer une calculatrice simple avec 2 inputs et 4 boutons opérateurs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <a href="exercices.html">Retour</a>
+    <h1>Créer une calculatrice simple avec 2 inputs et 4 boutons opérateurs</h1>
+
+    <input type="number" id="input1" placeholder="">
+    <input type="number" id="input2" placeholder="">
+
+    <div>
+        <button onclick="calculer('+')">+</button>
+        <button onclick="calculer('-')">-</button>
+        <button onclick="calculer('*')">*</button>
+        <button onclick="calculer('/')">/</button>
+    </div>
+
+    <p id="resultat"></p>
+
+    <script>
+        function calculer(operateur) {
+            const num1 = parseFloat(document.getElementById('input1').value);
+            const num2 = parseFloat(document.getElementById('input2').value);
+            let resultat;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('resultat').innerText = "Veuillez entrer des nombres valides.";
+                return;
+            }
+
+            switch (operateur) {
+                case '+':
+                    resultat = num1 + num2;
+                    break;
+                case '-':
+                    resultat = num1 - num2;
+                    break;
+                case '*':
+                    resultat = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        document.getElementById('resultat').innerText = "Erreur : Division par zéro.";
+                        return;
+                    }
+                    resultat = num1 / num2;
+                    break;
+                default:
+                    document.getElementById('resultat').innerText = "Opérateur inconnu.";
+                    return;
+            }
+
+            document.getElementById('resultat').innerText = `Résultat : ${resultat}`;
+        }
+    </script>
+</body>
+</html>

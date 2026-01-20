@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectionner une date, afficher jour de la semaine en JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <a href="exercices.html">Retour</a>
+    <h1>Selectionner une date, afficher jour de la semaine en JS</h1>
+
+    <input type="date" id="datePicker">
+    <button onclick="afficherJour()">Afficher le jour de la semaine</button>
+    <p id="resultat"></p>
+
+    <script>
+        function afficherJour() {
+            const dateInput = document.getElementById('datePicker').value;
+            if (!dateInput) {
+                document.getElementById('resultat').innerText = "Veuillez sélectionner une date.";
+                return;
+            }
+
+            const date = new Date(dateInput);
+            const joursSemaine = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+            const jour = joursSemaine[date.getDay()];
+
+            document.getElementById('resultat').innerText = `Le jour de la semaine est : ${jour}`;
+        }
+    </script>  
+</body>
+</html>
