@@ -91,6 +91,14 @@
         <a href="Afficher les infos d'un utilisateur via un tableau associatif.php">Tableau associatif</a>
         <a href="fonction carre($x).php">Fonction carre($x)</a>
         <a href="Vérifier si une adresse email contient @ et .com.php">email contient @ et .com?</a>
+        <a href="Page Principale.php">header.php dans une page principale</a>
+        <a href="fichier txt.php">Lire un fichier .txt</a>
+        <a href="POST 2x.php">Recevoir 2 chiffres en POST</a>
+        <a href="données JSON formatées.php">données JSON formatées</a>
+        <a href="Réception d'un formulaire JS, traitement, réponse JSON.php">Réception d'un formulaire JS et reponse JSON</a>
+        <a href="NombreAleatoire.php">générateur à nombre aleatoire</a>
+        <a href="logger requête.php">logger requête</a>
+        <a href="proteger page php via une session.php">protéger page php via une session</a>
     </div>
 
 </body>
