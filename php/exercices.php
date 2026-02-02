@@ -99,6 +99,8 @@
         <a href="NombreAleatoire.php">générateur à nombre aleatoire</a>
         <a href="logger requête.php">logger requête</a>
         <a href="proteger page php via une session.php">protéger page php via une session</a>
+        <a href="retourner des resultats filtre.php">resultats filtre</a>
+        <a href="Afficher le jour de la semaine en php avec get.php">afficher le jouer de la semaine en php</a>
     </div>
 
 </body>

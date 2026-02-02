@@ -13,7 +13,7 @@
     </form>
 
   <?php
-  if(isset($_POST['chiffre1']) && isset($_POST['chiffre2'])) {
+  if($_POST['chiffre1'] !== null ) && ($_POST['chiffre2'] !== null) {
     $a = $_POST['chiffre1'];
     $b = $_POST['chiffre2'];
 

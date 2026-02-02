@@ -8,7 +8,7 @@ $temperature = [
     "Samedi" => 17,
     "Dimanche" => 14
 ];
-header('Content-Type: json');
+
 
 echo json_encode($temperature);
 ?>
